@@ -1,0 +1,186 @@
+body{
+    font-family: Arial;
+    background:#f4f4f4;
+    margin:30px;
+}
+
+section{
+    background:white;
+    padding:20px;
+    margin-bottom:30px;
+    border-radius:8px;
+}
+
+.box{
+    background:#3498db;
+    color:white;
+    padding:30px;
+    text-align:center;
+    transition: 0.5s;       /**/
+}
+
+/* GRID BÁSICO */
+
+.grid-basico{
+    display:grid;
+                    /**/
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 100px);
+
+    gap:10px;
+}
+
+/* GRID TEMPLATE AREAS */
+
+.grid-areas{
+    display:grid;
+
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 80px 200px 80px;
+
+    /**/
+    grid-template-areas:
+        "header header header"
+        "nav main aside"
+        "footer footer footer";
+
+    gap:10px;
+}
+
+header{
+    grid-area: header;
+    background:#1abc9c;
+}
+
+nav{
+    grid-area: nav;
+    background:#9b59b6;
+}
+
+main{
+    grid-area: main;
+    background:#3498db;
+}
+
+aside{
+    grid-area: aside;
+    background:#e67e22;
+}
+
+footer{
+    grid-area: footer;
+    background:#2c3e50;
+    color:white;
+}
+
+/* PSEUDO CLASSES */
+
+/* :checked */
+
+input[type="checkbox"]:checked{
+    transform:scale(1.5);
+}
+
+/* :focus */
+
+input[type="text"]:focus{
+    border:3px solid red;
+    outline:none;
+}
+
+/* :nth-child */
+                    /**/
+.lista li:nth-child(odd){
+    background:#ddd;
+}
+
+.lista li:nth-child(even){
+    background:#bbb;
+}
+
+/* PSEUDO ELEMENTOS */
+
+.pseudo-texto::before{
+    content:"👉 ";
+}
+
+.pseudo-texto::after{
+    content:" 👈";
+}
+
+
+/* Transform e Position */
+
+.grid-normal{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+}
+
+.scale:hover{
+    transform: scale(1.5);
+}
+
+.rotate:hover{
+    transform: rotate(45deg);
+}
+
+.translate:hover{
+    transform: translate(-50px);
+}
+
+
+
+/* RGB LED com Keyframe*/
+
+.rgb-led{
+    width:200px;
+    height:200px;
+    border-radius:20px;
+
+    background:linear-gradient(
+        45deg,
+        red,green,blue,
+        red,green,blue,
+        red,green,blue
+    );
+
+    background-size:400% 400%;
+
+    animation: rgb 5s infinite linear;
+}
+
+
+@keyframes rgb{
+
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:50% 50%;
+    }
+
+    100%{
+        background-position:100% 50%;
+    }
+
+}
+
+/* Giro */
+
+.negocioquegira{
+    animation: girar 3s infinite;
+    transform-style: preserve-3d;
+    border: 2px solid black;
+    border-radius: 20px;
+}
+
+@keyframes girar {
+    from {
+        transform: rotateX(0deg);
+    }
+    to{
+        transform: rotateX(360deg);
+    }
+}
