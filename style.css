@@ -23,11 +23,9 @@ section{
 
 .grid-basico{
     display:grid;
-                    /**/
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 100px);
-
-    gap:10px;
+    gap: 10px; /*Espaçamento entre os elementos*/ 
 }
 
 /* GRID TEMPLATE AREAS */
@@ -39,38 +37,40 @@ section{
     grid-template-rows: 80px 200px 80px;
 
     /**/
-    grid-template-areas:
-        "header header header"
-        "nav main aside"
-        "footer footer footer";
+   grid-template-areas: 
+    "header header header"
+    "nav main aside"
+    "footer footer footer"
+   ;
+      
 
     gap:10px;
 }
 
 header{
     grid-area: header;
-    background:#1abc9c;
+    background-color: aquamarine;
 }
 
 nav{
-    grid-area: nav;
-    background:#9b59b6;
+   grid-area: nav;
+   background-color: antiquewhite;
 }
 
 main{
     grid-area: main;
-    background:#3498db;
+    background-color: rgb(0, 89, 255);
 }
 
 aside{
     grid-area: aside;
-    background:#e67e22;
+    background-color: blueviolet;
 }
 
 footer{
-    grid-area: footer;
-    background:#2c3e50;
-    color:white;
+  grid-area: footer;
+  background-color: black;
+  color: white;
 }
 
 /* PSEUDO CLASSES */
@@ -78,55 +78,52 @@ footer{
 /* :checked */
 
 input[type="checkbox"]:checked{
-    transform:scale(1.5);
+    
 }
 
 /* :focus */
 
 input[type="text"]:focus{
-    border:3px solid red;
-    outline:none;
+  
 }
 
 /* :nth-child */
                     /**/
 .lista li:nth-child(odd){
-    background:#ddd;
+   
 }
 
 .lista li:nth-child(even){
-    background:#bbb;
+   
 }
 
 /* PSEUDO ELEMENTOS */
 
 .pseudo-texto::before{
-    content:"👉 ";
+  
 }
 
 .pseudo-texto::after{
-    content:" 👈";
+    
 }
 
 
 /* Transform e Position */
 
 .grid-normal{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 50px;
+   
 }
 
 .scale:hover{
-    transform: scale(1.5);
+   
 }
 
 .rotate:hover{
-    transform: rotate(45deg);
+    
 }
 
 .translate:hover{
-    transform: translate(-50px);
+    
 }
 
 
@@ -134,35 +131,22 @@ input[type="text"]:focus{
 /* RGB LED com Keyframe*/
 
 .rgb-led{
-    width:200px;
-    height:200px;
-    border-radius:20px;
-
-    background:linear-gradient(
-        45deg,
-        red,green,blue,
-        red,green,blue,
-        red,green,blue
-    );
-
-    background-size:400% 400%;
-
-    animation: rgb 5s infinite linear;
+  
 }
 
 
 @keyframes rgb{
 
     0%{
-        background-position:0% 50%;
+        
     }
 
     50%{
-        background-position:50% 50%;
+        
     }
 
     100%{
-        background-position:100% 50%;
+        
     }
 
 }
@@ -170,17 +154,14 @@ input[type="text"]:focus{
 /* Giro */
 
 .negocioquegira{
-    animation: girar 3s infinite;
-    transform-style: preserve-3d;
-    border: 2px solid black;
-    border-radius: 20px;
+
 }
 
 @keyframes girar {
     from {
-        transform: rotateX(0deg);
+        
     }
     to{
-        transform: rotateX(360deg);
+        
     }
 }
